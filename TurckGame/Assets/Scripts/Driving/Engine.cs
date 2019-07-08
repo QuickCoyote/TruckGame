@@ -143,7 +143,7 @@ public class Engine : MonoBehaviour
     public float getSpeed(float circumference)
     {
         float revolutionsPerMileIN = circumference / 63360;
-        float speedPerMinute = currentRPM / revolutionsPerMileIN;
+        float speedPerMinute = currentRPM * revolutionsPerMileIN;
 
         return (speedPerMinute);
     }

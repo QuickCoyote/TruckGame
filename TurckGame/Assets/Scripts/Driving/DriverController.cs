@@ -21,9 +21,10 @@ public class DriverController : MonoBehaviour
             {
                 engine.gear++;
             }
-            engine.currentRPM += Time.deltaTime * Input.GetAxis("Vertical") * 20;
+            engine.currentRPM += Time.deltaTime * Input.GetAxis("Vertical") * (300 * (13/engine.GetGear()));
         }
-        transform.position += transform.forward * Mathf.Clamp(engine.getSpeed(suspension.GetCircumference()), engine.GetGearMinSpeed((int)engine.GetGear()), engine.GetGearMaxSpeed((int)engine.GetGear()));
+
+        transform.position += (transform.forward * Mathf.Clamp(engine.getSpeed(suspension.GetCircumference()), engine.GetGearMinSpeed((int)engine.GetGear()), engine.GetGearMaxSpeed((int)engine.GetGear())) / 100);
 
         Debug.Log("Speed (MPH): " + engine.getSpeed(suspension.GetCircumference()));
     }

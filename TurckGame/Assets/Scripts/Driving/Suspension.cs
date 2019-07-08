@@ -77,8 +77,6 @@ public class Suspension : MonoBehaviour
     public float GetCircumference()
     {
         float sectionHeight = tireSection * tireProfile;
-        
-
         return (sectionHeight * 2) + rimSize;
     }
 }
